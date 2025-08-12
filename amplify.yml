@@ -1,0 +1,25 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Node を Vite/プラグイン要件に合わせて 20.19.x に固定
+        - nvm install 20.19.0
+        - nvm use 20.19.0
+        - node -v
+        - yarn -v
+        # 依存関係のインストール（yarn v1 前提）
+        - yarn install --frozen-lockfile
+    build:
+      commands:
+        # Vite ビルド
+        - yarn build
+  artifacts:
+    # Vite のデフォルト出力
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/* 
+      - ~/.cache/yarn/**/* 

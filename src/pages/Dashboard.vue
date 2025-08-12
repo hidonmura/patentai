@@ -34,7 +34,7 @@
     </div>
 
     <div class="card" style="margin-top:16px;">
-      <div class="h2">課題資料のインポート</div>
+      <div class="h2">事業戦略情報のインプット</div>
       <p class="text-muted">関連資料（事業計画・競合情報・技術資料など）をアップロードしてください。</p>
 
       <div class="dropzone" :class="{ over: isOver }" @dragover.prevent="onDragOver" @dragleave="onDragLeave" @drop.prevent="onDrop">
@@ -66,9 +66,9 @@
 import { ref } from 'vue'
 
 const projects = ref([
-  { id: 1, title: 'AI 分析 PoC', desc: '競合A領域のクレーム調査' },
+  { id: 1, title: 'AI 分析', desc: '競合A領域調査' },
   { id: 2, title: '新規事業X', desc: '関連特許の俯瞰' },
-  { id: 3, title: '社内ナレッジ整理', desc: '無効資料の探索' }
+  { id: 3, title: 'ナレッジ整理', desc: '資料の探索' }
 ])
 
 const files = ref([])

@@ -29,3 +29,75 @@ body { margin: 0; color: var(--text); background: var(--bg); font-family: ui-san
 .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
 
 .badge { background: var(--brand-100); color: var(--brand-600); font-weight: 700; padding: 2px 8px; border-radius: 999px; font-size: 12px; }
+
+
+.actions-center{
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;   /* 中央寄せ */
+  gap: 12px;
+}
+
+.btn-large{
+  padding: 16px 40px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  border-radius: 12px;
+  border: none;
+  background: #7C3AED; /* 濃いめの青 */
+  color: #fff;         /* 白文字 */
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(14,165,233,0.25);
+  transition: transform .1s ease, filter .1s ease;
+}
+.btn-large:hover{ filter: brightness(1.05); transform: translateY(-2px); }
+.btn-large:disabled{ opacity:.6; cursor:not-allowed; }
+.note-warning {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: #dc2626; /* 赤色 */
+  text-align: center;
+  font-weight: 600;
+}
+.actions-wrapper {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 中央寄せ */
+  gap: 8px;
+  position: relative;
+}
+.btn-large {
+  padding: 16px 40px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  border-radius: 12px;
+  border: none;
+  background: #7C3AED; /* 紫寄り */
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+  transition: transform .1s ease, filter .1s ease;
+}
+.btn-large:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+.btn-large:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+.btn-back {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  text-decoration: none;
+  align-self: flex-end; /* 右寄せ */
+}
+.btn-back:hover {
+  background: var(--brand-100);
+}
+</style>

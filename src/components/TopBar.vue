@@ -1,8 +1,6 @@
 <template>
   <header class="bar">
     <div class="brand">
-      <img :src="logoUrl" alt="Patent Planet" width="28" height="28" />
-      <strong>Patent Planet</strong>
     </div>
     <div class="right">
       <button class="icon-btn" title="通知">🔔</button>
@@ -10,10 +8,6 @@
     </div>
   </header>
 </template>
-
-<script setup>
-import logoUrl from '../assets/logo.png'
-</script>
 
 <style scoped>
 .bar { display:flex; align-items:center; justify-content:space-between; padding: 0 15; border-bottom:1px solid var(--line); background:#fff; }

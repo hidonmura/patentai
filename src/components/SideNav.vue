@@ -4,13 +4,14 @@
       <div class="logo-wrap">
         <!-- ロゴをクリックでダッシュボードへ -->
         <router-link to="/" class="logo-link" aria-label="ダッシュボードへ">
-          <img :src="logo" alt="Patent Planet" class="logo" />
+          <img :src="navLogo" :alt="navAlt" class="logo" />
         </router-link>
       </div>
 
       <h3>メニュー</h3>
       <router-link to="/" class="item" active-class="active">ダッシュボード</router-link>
       <router-link to="/reports/sample" class="item" active-class="active">戦略的特許分析レポート</router-link>
+      <router-link to="/reports/strategic-support" class="item" active-class="active">戦略的特許取得支援（モック）</router-link>
     </div>
 
     <!-- 下部固定CTA -->
@@ -21,7 +22,15 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import logo from '../assets/logo.png' // ← これで確実にバンドル
+import mercuryLogo from '../assets/mercury-scan.png'
+
+const route = useRoute()
+const isStrategicSupport = computed(() => route.name === 'strategic-support-report')
+const navLogo = computed(() => (isStrategicSupport.value ? mercuryLogo : logo))
+const navAlt = computed(() => (isStrategicSupport.value ? 'Mercury Scan' : 'Patent Planet'))
 </script>
 
 <style scoped>
